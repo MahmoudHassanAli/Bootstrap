@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Ristorante Con Fusion</title>
+</head>
+
+<body>
+    <!-- 
+        elements :
+            <nav> : Bootstrap component to create a navbar
+        classes :
+            navbar : defines a navigation bar
+            navbar-inverse : provides a dark skin for the navbar (inverse, light and bg-primary/inverse)
+            navbar-toggleable-* : defines a toggleable behavior that is init in the specified screen size (extra small to *)
+            fixed-top : makes the bar being fixed on top of our page (stays upon scrolling)
+        notes:
+            Any content of the navbar is placed inside a container to make it responsive
+    -->
+    <nav class="navbar navbar-inverse navbar-toggleable-sm fixed-top">
+        <div class="container">
+            <!--
+                elements :
+                    <button> : defines a clickable button where the content can be text, images .. (difference with the <input> tag used in forms)
+                classes :
+                    navbar-toggler : defines a toggle button
+                    data-toggle : JS Bootstrap component, used to toggle on/off links in a container
+                    data-target : JS Bootstrap components, specifies the target of the data toggle
+                    navbar-toggler-icon : designs the button to have 3 lines such as mobile sites (skin for the <span> element, content of <button>)
+                    navbar-brand : represents the brand of our company (used on <a> element to set hyperlinking, can be an image too)
+            -->            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"-->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="41"></a>
+            
+            <!--
+                elements :
+                    <ul> / <li> : unordered list, used here for a list of hyperlinks in a navbar
+                classes :
+                    collapse / navbar-collapse : indicates a collapsible element / collapsible navbar
+                    id : sets an ID to the element (can be done to any element)
+                    navbar-nav : styles hyperlinks in the navigation bar (displayed horizontally)
+                    nav-item : defines a navigation item
+                    nav-link : styles the item as a link inline and centered
+                    active : shows the current link displayed
+            -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- jumbotron : Bootstrap element used to showcase key content on a website -->
+    <header class="jumbotron">
+        <!-- container class : has a fixed width on the screen, determined by the size of the screen -->
+        <div class="container">
+            <!-- row class : divides vertically the page, each row is divided into 12 columns -->
+            <div class="row row-header">
+                <!-- 
+                    column classes :
+                        col-* : defines the number of columns the element should take in the row from the lowest to the biggest screen size
+                        col-xs-* to col-xl-* : same as col-*, but is used for specific sizes, from the screen size specified to the biggest
+                    notes :
+                        col-xs/sm/md/lg/xl are available
+                        col-sm-* overrides col-* for small screen sizes
+                        using simply col or col-sm (and so on) specifies that the element should take what is left over in the row
+                        using multiple rows let's us stack the divs vertically in the page
+                        using multiple col-12 only "nests" rows
+                        nesting rows in also possible (<div class="container"><div class="row"><div class="col-5"></div> <div class="row"></div></div></div>)
+                -->
+                <div class="col-12 col-sm-6">
+                    <h1>Ristorante con Fusion</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <!-- added mx-auto and d-block to align the image in the center horizontally -->
+                    <!-- img-fluid : used to make an image responsive -->
+                    <img src="img/logo.png" class="img-fluid mx-auto d-block">
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <a role="button" class="btn btn-sm btn-block btn-warning text-white" href="#reserveform">Reserve a table</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!--
+            align-items-center : displays elements centered vertically
+            justify-content-center : displays elements centered horizontally
+            flex-last / flex-first : places the element in last or first position in a row
+            hidden-*-down / hidden-*-up : hides the element for the specified screen size and downwards / upwards
+            offset-*-* : shifts the column to the right side for the specified screen size and number of columns (f.ex. offset-sm-1) 
+        -->
+        <div class="row row-content align-items-center">
+            <div class="col-sm-4 col-md-3 flex-last">
+                <h3>Our Lipsmacking Culinary Creations</h3>
+            </div>
+            <div class="col-sm col-md flex-first">
+                <!-- 
+                    media : defines a component with an image on the left or right side of a description
+                    media-body : defines the body of the media component, where the description should go
+                    d-flex : flexbox class used by objects for alignment purposes
+                    mr-3 : margin right 3 px, available for left, top, bottom and all (including specified screen sizes)
+                    img-thumbnail : defines a thumbnail image (size, corners and borders)
+                -->
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="uthapizza">
+                    <div class="media-body">
+                        <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
+                        <p class="hidden-xs-down">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col-sm-4 col-md-3">
+                <h3>This Month's Promotions</h3>
+            </div>
+            <div class="col-sm col-md">
+                <div class="media">
+                    <!-- placing the image after the media-body makes it go to the right side -->
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                        <p class="hidden-xs-down">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail align-self-center" src="img/buffet.png" alt="buffet">
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col-sm-4 col-md-3 flex-last">
+                <h3>Meet our Culinary Specialists</h3>
+            </div>
+            <div class="col-sm col-md flex-first">
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="Alberto Somayya">
+                    <div class="media-body">
+                        <h2>Alberto Somayya</h2>
+                        <h4>Executive Chef</h4>
+                        <p class="hidden-xs-down">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content justify-content-center">
+            <div class="col-12 col-sm-8">
+                <!-- 
+                    card : used to define a card to highlight content on a website
+                    card-header : used to define the header of a card, can be omitted (quote example)
+                    card-block : used to define the body of a card, can be applied to a div with the "card" class in case we want no header
+                -->
+                <div class="card">
+                    <h3 class="card-header card-warning text-white">Reserve a table</h3>
+                    <div class="card-block">
+                        <!--
+
+                            form-group : defines a group of elements in a form (a row mostly, where a label and an input or more are present)
+                            m-1 and m-md-3 : margin all with 1 px, and for medium screen sizes margin all with 3 px
+                            col-form-label : used for the label preceding controls in the form
+                            form-check : used for checkboxes and radios
+                            form-check-input : used to have the text inline with the radio button
+                            form-check-inline : aligns checkboxes and radios inline in the form
+                            form-control : used for textual inputs, select menus and text areas
+                        -->
+                        <form id="reserveform">
+                            <!-- aligned items to be centered vertically (nicer than the screenshots ...) -->
+                            <div class="form-group row align-items-center">
+                                <label for="nbguests" class="col-12 col-md-2 col-form-label">Number of guests</label>
+                                <div class="col-12 col-md-10">
+                                    <div class="form-check form-check-inline m-1 m-md-3">
+                                        <label class="form-check-label">
+                                            <input type="radio" name="nbguests" class="form-check-input"> 1
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-1 m-md-3">
+                                        <label class="form-check-label">
+                                            <input type="radio" name="nbguests" class="form-check-input"> 2
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-1 m-md-3">
+                                        <label class="form-check-label">
+                                            <input type="radio" name="nbguests" class="form-check-input"> 3
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-1 m-md-3">
+                                        <label class="form-check-label">
+                                            <input type="radio" name="nbguests" class="form-check-input"> 4
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-1 m-md-3">
+                                        <label class="form-check-label">
+                                            <input type="radio" name="nbguests" class="form-check-input"> 5
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-1 m-md-3">
+                                        <label class="form-check-label">
+                                            <input type="radio" name="nbguests" class="form-check-input"> 6
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row align-items-center">
+                                <label for="datetime" class="col-12 col-md-2 col-form-label">Date and time</label>
+                                <div class="col-12 col-sm-5">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span class="fa fa-calendar"></span></div>
+                                        <!-- used type="text", could be possible to use type="date" but it is not rendered the same way -->
+                                        <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-5">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span class="fa fa-clock-o"></span></div>
+                                        <!-- used type="text", could be possible to use type="time" but it is not rendered the same way -->
+                                        <input type="text" class="form-control" id="time" name="time" placeholder="Time">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row align-items-center">
+                                <div class="offset-md-2 col-md-10">
+                                    <button type="submit" class="btn btn-primary">
+                                        Reserve
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-5 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <!-- list-unstyled : removes bullets from a bullet list -->
+                    <ul class="list-unstyled">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./aboutus.html">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              121, Clear Water Bay Road<br>
+		              Clear Water Bay, Kowloon<br>
+		              HONG KONG<br>
+		              <span class="fa fa-phone fa-lg"></span> : +852 1234 5678<br>
+		              <span class="fa fa-fax fa-lg"></span> : +852 8765 4321<br>
+		              <span class="fa fa-envelope fa-lg"></span> : <a href="mailto:confusion@food.net">confusion@food.net</a>
+		           </address>
+                </div>
+                <!-- align-self-center centers the specified div (columns) vertically in the row -->
+                <!-- align-items-center is applied to a row and not only to a div (columns) -->
+                <div class="col col-sm-4 align-self-center">
+                    <div style="text-align: center">
+                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><span class="fa fa-google-plus"></span></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><span class="fa fa-facebook"></span></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><span class="fa fa-linkedin"></span></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><span class="fa fa-twitter"></span></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><span class="fa fa-youtube"></span></a>
+                        <a class="btn btn-social-icon" href="mailto:"><span class="fa fa-envelope-o"></span></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2015 Ristorante Con Fusion</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
